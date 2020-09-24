@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "tsc src/*.ts",
-    "test": "jest",
+    "test": "jest intex.test.js",
     "install-npm-packages": "npm install",
     "check-my-packages": "ncu",
     "update-npm-packages": "ncu -u"
