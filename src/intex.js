@@ -1,13 +1,17 @@
 "use strict";
 exports.__esModule = true;
 exports.testIsEqual = void 0;
+var AreBothNaN = function (value1, value2) {
+    if (typeof value1 === "number" &&
+        value1 !== value1 &&
+        typeof value2 === "number" &&
+        value2 !== value2) {
+        return true;
+    }
+    return false;
+};
 function testIsEqual(value1, value2) {
-    if (isNaN(value1) ||
-        isNaN(value2) ||
-        value1 === Infinity ||
-        value1 === -Infinity ||
-        value2 === Infinity ||
-        value2 === -Infinity) {
+    if (AreBothNaN(value1, value2)) {
         return true;
     }
     else {

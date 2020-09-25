@@ -1,12 +1,18 @@
-export function testIsEqual(value1: any, value2: any): boolean {
+const AreBothNaN = (value1: any, value2: any) => {
   if (
-    isNaN(value1) ||
-    isNaN(value2) ||
-    value1 === Infinity ||
-    value1 === -Infinity ||
-    value2 === Infinity ||
-    value2 === -Infinity
+    typeof value1 === "number" &&
+    value1 !== value1 &&
+    typeof value2 === "number" &&
+    value2 !== value2
   ) {
+    return true;
+  }
+
+  return false;
+};
+
+export function testIsEqual(value1: any, value2: any): boolean {
+  if (AreBothNaN(value1, value2)) {
     return true;
   } else {
     return value1 === value2;
